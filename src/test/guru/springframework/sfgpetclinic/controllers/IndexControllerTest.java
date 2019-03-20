@@ -18,6 +18,7 @@ class IndexControllerTest {
     void index() {
         assertEquals("index", controller.index());
         assertEquals("index", controller.index(), "Wrong View returned");
+    }
 
     @Test
     void oupsHandler() {
