@@ -7,6 +7,7 @@ import org.junit.jupiter.api.condition.*;
 
 import java.time.Duration;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
@@ -24,6 +25,9 @@ class IndexControllerTest {
     void index() {
         assertEquals("index", controller.index());
         assertEquals("index", controller.index(), "Wrong View returned");
+
+        // don't mixed
+        assertThat(controller.index()).isEqualTo("index");
     }
 
     @DisplayName("Test exception")
